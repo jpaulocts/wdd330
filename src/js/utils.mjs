@@ -39,3 +39,31 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
     }
     parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
+
+
+export function renderWithTemplate(templateFn, parentElement, data, callback){
+  parentElement.insertAdjacentHTML("afterbegin", templateFn);
+  const htmlStrings = list.map(templateFn);
+    
+    if (callback) {
+      callback(data);
+    }
+    
+}
+
+export async function loadTemplate(path) {
+  const html = await fetch(path) .then(converToText);
+  const template = document.createElement("template");
+  template.innerHTML = html;
+  return template;
+}
+
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate("../partials/header.html");
+  const headerElement = document.querySelector("#main-header");
+  const footerTemplate = await loadTemplate("../partials/footer.html");
+  const footerElement = document.querySelector("#main-footer");
+
+  renderWithTemplate(headerTemplate, headerElement)
+  renderWithTemplate(footerTemplate, footerElement);
+}

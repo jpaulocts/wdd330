@@ -112,6 +112,39 @@ button {
 
 /* End cart icon styles */
 
+/* product-grid start */
+
+.product-grid {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: var(--dark-grey);
+  padding-left: 0;
+}
+
+.product-grid li {
+  width: 150px;
+  /* border: 1px solid var(--light-grey); */
+  padding: 0.5em;
+  margin: 1em;
+}
+
+.product-list a {
+  text-decoration: none;
+}
+
+.product-grid a:link,
+.product-grid a:visited {
+  color: var(--dark-grey);
+}
+.product-grid a:hover {
+  border-bottom: 2px solid gray;
+}
+
+/* product-grid end */
+
 .mission {
   padding: 0 0.5em;
   /* margin: 0.5em 0; */

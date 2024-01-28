@@ -41,20 +41,21 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
 }
 
 
-export function renderWithTemplate(templateFn, parentElement, data, callback){
-  parentElement.insertAdjacentHTML("afterbegin", templateFn);
+export function renderWithTemplate(templateFn, parentElement, list, position="afterbegin", clear=false){
+  
   const htmlStrings = list.map(templateFn);
     
-    if (callback) {
-      callback(data);
+    if (clear) {
+      parentElement.innerHTML = "";
     }
+
+    parentElement.insertAdjacentHTML(position,htmlStrings.join(""));
     
 }
 
 export async function loadTemplate(path) {
-  const html = await fetch(path) .then(converToText);
-  const template = document.createElement("template");
-  template.innerHTML = html;
+  const res = await fetch(path) 
+  const template = await res.text();
   return template;
 }
 

@@ -28,11 +28,23 @@ function cartItemTemplate(item) {
 
  function sumPrice(list) {
   const prices = list.reduce((acumulator, element)=> parseFloat(acumulator) + parseFloat(element.FinalPrice),0);
-  console.log(prices);
   const htmlElement = document.querySelector(".product-list");
-  const sum = document.createElement("span");
-  sum.innerHTML = `Total: $${prices}`;
-  htmlElement.appendChild(sum);
+  const card = document.querySelectorAll(".product-list li");
+  if (card.length >0){
+    const sum = document.createElement("span");
+    const buttonCheck = document.createElement("button");
+    buttonCheck.setAttribute("type", "button");
+    buttonCheck.setAttribute("onclick", "window.location.href='/checkout/index.html';");
+    buttonCheck.textContent = "Checkout";
+    sum.innerHTML = `Total: $${prices}`;
+    htmlElement.appendChild(sum);
+    htmlElement.appendChild(buttonCheck);
+  } else {
+
+    const message = document.createElement("span");
+    message.textContent = "There is no item here";
+    htmlElement.appendChild(message);
+  }
 
 }
 

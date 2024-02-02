@@ -157,10 +157,17 @@ button {
 }
 .product-list {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
+}
+
+.product-list span {
+
+  font-weight: bold;
+  align-self: flex-end;
+  margin: 1rem;
 }
 .product-list a {
   text-decoration: none;
@@ -233,6 +240,11 @@ button {
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
+}
+
+.removeItem {
+font-size: medium;
+margin: .5rem;
 }
 
 @media screen and (min-width: 500px) {

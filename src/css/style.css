@@ -164,7 +164,6 @@ button {
 }
 
 .product-list span {
-
   font-weight: bold;
   align-self: flex-end;
   margin: 1rem;
@@ -243,8 +242,8 @@ button {
 }
 
 .removeItem {
-font-size: medium;
-margin: .5rem;
+  font-size: medium;
+  margin: 0.5rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -264,13 +263,11 @@ margin: .5rem;
 /* Cart items */
 
 .product-list.card {
-
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-list.card span {
-
   align-self: center;
 }
 
@@ -299,7 +296,6 @@ margin: .5rem;
   width: 25%;
   font-size: 1em;
 }
-
 
 footer {
   font-size: var(--small-font);

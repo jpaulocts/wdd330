@@ -2,11 +2,11 @@ import { renderListWithTemplate } from "./utils.mjs";
 
 export function productCardTemplate(product){
 
-    return `<li class="product-card">
+    return `<li class="product-card data-id=${product.Brand.Name}">
     <a href="../product_pages/index.html?product=${product.Id}">
       <img src="${product.Images.PrimaryMedium}" alt="Image of ${product.Name}">
       <h3 class="card__brand">${product.Brand.Name}</h3>
-      <h2 class="card__name">${product.Name}</h2>
+      <h2 class="card__name" >${product.Name}</h2>
       <p class="product-card__price">$${product.FinalPrice}</p>
     </a>
   </li>`   
@@ -24,7 +24,10 @@ export default class ProductList{
 
         const list = await this.dataSource.getData(this.category);
         this.renderList(list);
-        document.querySelector(".title").innerHTML = `: ${capitalize(this.category)}`
+        document.querySelector(".title").innerHTML = `: ${capitalize(this.category)}`;
+        filter();
+      
+
     }
 
     renderList(list){
@@ -41,4 +44,8 @@ export default class ProductList{
 function capitalize(str) {
     return str.slice(0, 1).toUpperCase() + str.slice(1);
   }
+
+
+
+    
 

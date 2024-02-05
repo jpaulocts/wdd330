@@ -112,6 +112,39 @@ button {
 
 /* End cart icon styles */
 
+/* product-grid start */
+
+.product-grid {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: var(--dark-grey);
+  padding-left: 0;
+}
+
+.product-grid li {
+  width: 150px;
+  /* border: 1px solid var(--light-grey); */
+  padding: 0.5em;
+  margin: 1em;
+}
+
+.product-list a {
+  text-decoration: none;
+}
+
+.product-grid a:link,
+.product-grid a:visited {
+  color: var(--dark-grey);
+}
+.product-grid a:hover {
+  border-bottom: 2px solid gray;
+}
+
+/* product-grid end */
+
 .mission {
   padding: 0 0.5em;
   /* margin: 0.5em 0; */
@@ -128,6 +161,12 @@ button {
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
+}
+
+.product-list span {
+  font-weight: bold;
+  align-self: flex-end;
+  margin: 1rem;
 }
 .product-list a {
   text-decoration: none;
@@ -202,6 +241,11 @@ button {
   grid-column: 3;
 }
 
+.removeItem {
+  font-size: medium;
+  margin: 0.5rem;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -214,6 +258,43 @@ button {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
   }
+}
+
+/* Cart items */
+
+.product-list.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list.card span {
+  align-self: center;
+}
+
+/* checkout styles */
+.checkout-form {
+  padding: 0.5em;
+}
+.checkout-form label {
+  display: block;
+}
+.checkout-form input {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.checkout-summary > ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.checkout-summary li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-summary input {
+  width: 25%;
+  font-size: 1em;
 }
 
 footer {

@@ -124,12 +124,29 @@ button {
   padding-left: 0;
 }
 
+
+ /* Styling for the cart quantity */
+ .cart-quantity {
+  background-color: #f0a868; 
+  right: 0px;
+  top: -9px;
+  position: absolute;
+  border-radius: 90px;
+  font-size: 20px;
+  padding: 3px;
+}
+
+
+
 .product-grid li {
   width: 150px;
   /* border: 1px solid var(--light-grey); */
   padding: 0.5em;
   margin: 1em;
 }
+
+
+
 
 .product-list a {
   text-decoration: none;

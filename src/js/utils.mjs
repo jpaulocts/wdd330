@@ -41,7 +41,7 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
 }
 
 
-export function renderWithTemplate(templateFn, parentElement, list, position="afterbegin", clear=false){
+export function renderWithTemplate(templateFn, parentElement,  position="afterbegin", clear=false){
     if (clear) {
       parentElement.innerHTML = "";
     }
@@ -64,6 +64,8 @@ export async function loadHeaderFooter() {
 
   renderWithTemplate(headerTemplate, headerElement)
   renderWithTemplate(footerTemplate, footerElement);
+  totalQuantity()
+
 }
 
 export function alertMessage(message, scroll = true, duration = 4000) {
@@ -98,4 +100,14 @@ export function alertMessage(message, scroll = true, duration = 4000) {
 export function removeAllAlerts() {
   const alerts = document.querySelectorAll(".alert");
   alerts.forEach((alert) => document.querySelector("main").removeChild(alert));
+}
+
+export function totalQuantity (){      
+  const array = getLocalStorage("so-cart");
+  const cartAmount = document.getElementById("cart-quantity");
+  if (array) {
+      cartAmount.textContent = array.map((x) => x.quantity).reduce((x, y) => x + y, 0); 
+  } else {
+      cartAmount.textContent = 0;
+  }
 }

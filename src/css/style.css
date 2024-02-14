@@ -30,6 +30,7 @@ header {
   justify-content: space-between;
   padding: 0 10px;
 }
+
 .logo {
   line-height: 60px;
   width: 245px;
@@ -262,6 +263,52 @@ button {
   font-size: medium;
   margin: 0.5rem;
 }
+/* Styling for the search Icons begin here  */
+
+/* body{
+  position: absolute;
+} */
+.search {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+
+}
+.search i{
+  position: absolute;
+}
+i{
+  margin-left: 10px;
+  margin-top: 12px;
+  color: #aca8a8;
+}
+.search input{
+  padding: .75rem;
+  width: 25rem;
+  text-align: center;
+}
+
+.search .sear{
+  width: 100px;
+  background-color: #525b0f;
+  color: #f0a868;
+
+}
+
+
+
+
+/* Styling for the search Icon Ends here  */
+
+
+
+
+
+
+
 
 @media screen and (min-width: 500px) {
   body {

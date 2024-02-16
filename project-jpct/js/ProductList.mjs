@@ -11,7 +11,7 @@ export function productCardTemplate(product){
     const id = recipeLink.substring(startIndex,endIndex);
 
     return `<li class="product-card">
-    <a href="/recipe_page/index.html?recipe=${id}">
+    <a href="/wdd330/project-jpct/recipe_page/index.html?recipe=${id}">
       <img src="${product.recipe.image}" alt="Image of ${product.recipe.label}">
       <h2 class="card__name">${product.recipe.label}</h2>
       <h3 class="card__brand" >Cuisine Type:${product.recipe.cuisineType}</h3>
